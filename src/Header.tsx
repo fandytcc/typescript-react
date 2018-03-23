@@ -1,21 +1,23 @@
-import * as React from 'react'
+import * as React from 'react';
 
-//define a props interface for each component, no longer need prop-types package
-//must declare an interface for the state of class components
+/*:: define a props interface for each component, no longer need prop-types package */
+/*:: must declare an interface for the state of class components */
 interface Props {
-  name?: string
+  name?: string;
 }
-//? operator = to mark defaultProps as optional; optional props are union of type undefined | string
+/*:: ? operator = to mark defaultProps as optional; optional props are union of type undefined | string */
 
-//type SFC<P> (Stateless Functional Component - allows us to use defaultProps)= alias of interface StatelessComponent<P>, has pre-defined children, defaultProps, displayName, etc. Don't need to define children?: ReactNode every time on our own.
+/*:: SFC<P> (Stateless Functional Component), has pre-defined children, defaultProps, displayName.. */
+
+/*:: Don't need to define children?: ReactNode every time on our own. */
 const Header: React.SFC<Props> = (props: Props) => (
   <h1>
     Hello, {props.name}! Welcome to React and TypeScript.
   </h1>
-)
+);
 
 Header.defaultProps = {
-  name: 'world'
-}
+  name: 'world',
+};
 
-export default Header
+export default Header;
